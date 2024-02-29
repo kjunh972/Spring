@@ -1,7 +1,6 @@
 package Hello.HelloSpring.repository;
 
 import Hello.HelloSpring.domain.Member;
-
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRespository {
@@ -52,5 +51,10 @@ public class MemoryMemberRepository implements MemberRespository {
         return new ArrayList<>(store.values());
         //새로 생성된 ArrayList를 메서드의 반환 값으로 반환한다.
         //이렇게 함으로써 이 메서드를 호출하면 회원 저장소에 있는 모든 회원을 포함한 리스트를 얻을 수 있다.
+    }
+
+    public void clearStore() {
+        //store을 비워주는 역할. 저장된 member들을 지울때 사용할꺼임.
+        store.clear();
     }
 }
